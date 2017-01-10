@@ -39,7 +39,7 @@
   <h3>Recent Itineraries</h3>
   <div>
   <!-- <span ng-repeat='obj in lastThree'><b>{{obj.title}}</b>: {{obj.author}} //</span> -->
-    <div class='recentItin' ng-style='landscapes[$index]'  ng-repeat='obj in lastThree track by $index'>
+    <div class='recentItin' ng-style='landscapes[$index]'  ng-repeat='obj in lastThree track by $index' ng-click='gotoItinerary(obj.title)'>
       <span class='recentTitle'>{{obj.title}}</span>
       <span class='recentAuthor'>{{obj.author}}</span>
     </div>

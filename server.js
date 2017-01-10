@@ -133,6 +133,13 @@ app.post('/getItineraries', (req, res) =>{
   }
 });
 
+app.get('/getItinerary', (req, res) => {
+  Models.Itinerary.findOne({title: req.query.title}, (err, itin) => {
+    if(err) return console.log(err);
+    return res.json(itin);
+  })
+})
+
 
 app.get('/searchLocation', (req, res) => {
   request({

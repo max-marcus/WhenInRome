@@ -1,14 +1,18 @@
-<div class='itinerary-container'>
-  <h1>{{title}}</h1>
-  <h2>{{area}}</h2>
-  <h2>{{zipcode}}</h2>
-
-  <div class="stops">
-    <p ng-repeat="stop in stops track by $index">
-      <b>{{placeName}}</b>
-      </br>{{description}}
-    </p>
-    <img src={{icon}} alt="google place icon"></img>
+<div class="itinerary-container">
+  <div class="itin-header">
+    <h1>{{title}}</h1>
+    <h2>{{area}}</h2>
   </div>
+  <!--<h2>{{zipcode}}</h2>-->
 
+  <div class="stops-container">
+    <div class="stop" ng-repeat="stop in stops track by $index">
+      <div class="stop-left">
+        <h3>{{stop.placeName}}</h3>
+        <h4>{{stop.location}}</h4>
+        <h6>Description: {{stop.description}}</h6>
+      </div>
+      <img class="icon" ng-if=stop.iconLink src="{{stop.iconLink}}" alt="google place icon"></img>
+    </div>
+  </div>
 </div>

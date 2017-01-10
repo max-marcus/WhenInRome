@@ -15,7 +15,8 @@ const stopSchema = new mongoose.Schema({
   placeName: String,
   location: String,
   description: String,
-  stopNumber: Number
+  stopNumber: Number,
+  iconLink: String
 });
 
 const itinerarySchema = new mongoose.Schema({
@@ -24,7 +25,6 @@ const itinerarySchema = new mongoose.Schema({
   authorLocation: String,
   authorZip: String,
   stops: [stopSchema],
-  iconLink: String,
   created: { type: Date, default: Date.now }
 });
 

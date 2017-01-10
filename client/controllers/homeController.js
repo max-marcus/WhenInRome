@@ -66,7 +66,7 @@ function HomeController($scope, ItinFactory, $http, UserFactory, HttpFactory, $w
   $scope.logout = ProfileFactory.logout;
 
   $scope.gotoItinerary = (itinerary) =>{
-    ParamsFactory.params = {type: 'other', name: itinerary};
+    ParamsFactory.params = {itineraryName: itinerary};
     $window.location.href = '#/itinerary';
   }
 

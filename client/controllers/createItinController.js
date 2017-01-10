@@ -1,8 +1,8 @@
 angular
   .module('solo.createItinController', ['ngRoute', 'ngMap'])
-  .controller('createItinController', ['$scope', '$location', '$http',  '$window', 'UserFactory', 'HttpFactory', 'ProfileFactory', createItinController]);
+  .controller('createItinController', ['$scope', '$location', '$http', '$window', 'UserFactory', 'HttpFactory', 'ProfileFactory', 'ParamsFactory', createItinController]);
 
-function createItinController($scope, $location, $http, $window, ItinFactory, UserFactory, HttpFactory, ProfileFactory) {
+function createItinController($scope, $location, $http, $window, UserFactory, HttpFactory, ProfileFactory, ParamsFactory) {
   $scope.username = UserFactory.username;
   $scope.menuStyle = '';
   //HOLDS ALL STOPS ADDED TO ITINERARY
@@ -50,10 +50,10 @@ function createItinController($scope, $location, $http, $window, ItinFactory, Us
       UserFactory.username,
       $scope.authorLocation,
       $scope.authorZip,
-      $scope.stops,
-      $scope.icon
+      $scope.stops
     )
     .then(function () {
+      ParamsFactory.params.itineraryName = $scope.title;
       $window.location.href = '#itinerary';
     });
   }
@@ -81,10 +81,10 @@ function createItinController($scope, $location, $http, $window, ItinFactory, Us
     }
   }
 
-  $scope.gotoMyItineraries = ProfileFactory.gotoMyItineraries;
-  $scope.gotoFavorites = ProfileFactory.gotoFavorites;
-  $scope.gotoFriends = ProfileFactory.gotoFriends;
-  $scope.logout = ProfileFactory.logout;
+  // $scope.gotoMyItineraries = ProfileFactory.gotoMyItineraries;
+  // $scope.gotoFavorites = ProfileFactory.gotoFavorites;
+  // $scope.gotoFriends = ProfileFactory.gotoFriends;
+  // $scope.logout = ProfileFactory.logout;
 
   $scope.clickDelegation = (event) =>{
     if(event.target.className.indexOf('profile') === -1){

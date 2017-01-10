@@ -181,6 +181,23 @@ a {
   text-align: center;
 }
 
+.itinerary-container {
+  margin: 0 auto;
+  width: 40%;
+}
+
+.itinerary-container h1 {
+  margin: 3px 0 0 0;
+}
+
+.itinerary-container h2 {
+  margin-top: 5px;
+}
+
+.itin-header {
+  text-align: center;
+}
+
 .stops {
   margin-left: 2px;
   margin-bottom: 4px;
@@ -189,6 +206,35 @@ a {
   border: 1px solid black;
   display: inline-block;
   overflow: scroll;
+}
+
+.stop {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.stop h3, h4 {
+  margin: 0;
+}
+
+.stop h3 {
+  font-size: 24;
+  font-style: italic;
+}
+
+.stop h6 {
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+  margin-left: 25px;
 }
 
 /*STYLES FOR ITINERARY STOP CREATOR*/
