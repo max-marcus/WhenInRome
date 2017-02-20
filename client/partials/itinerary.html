@@ -10,7 +10,7 @@
       <div class="stop-left">
         <h3>{{stop.placeName}}</h3>
         <h4>{{stop.location}}</h4>
-        <h6>Description: {{stop.description}}</h6>
+        <h6 ng-if="stop.description">Description: {{stop.description}}</h6>
       </div>
       <img class="icon" ng-if=stop.iconLink src="{{stop.iconLink}}" alt="google place icon"></img>
     </div>

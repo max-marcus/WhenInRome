@@ -1,4 +1,5 @@
 'use strict';
+
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
@@ -8,7 +9,7 @@ const userSchema = new mongoose.Schema({
   interest: String,
   friends: [],
   itineraries: [],
-  favorites: []
+  favorites: [],
 });
 
 const stopSchema = new mongoose.Schema({
@@ -16,7 +17,7 @@ const stopSchema = new mongoose.Schema({
   location: String,
   description: String,
   stopNumber: Number,
-  iconLink: String
+  iconLink: String,
 });
 
 const itinerarySchema = new mongoose.Schema({
@@ -25,11 +26,11 @@ const itinerarySchema = new mongoose.Schema({
   authorLocation: String,
   authorZip: String,
   stops: [stopSchema],
-  created: { type: Date, default: Date.now }
+  created: { type: Date, default: Date.now },
 });
 
 
 const Itinerary = mongoose.model('Itinerary', itinerarySchema);
 const User = mongoose.model('User', userSchema);
 
-module.exports = {Itinerary, User};
+module.exports = { Itinerary, User };

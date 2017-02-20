@@ -1,4 +1,17 @@
 <h1 style='text-align:center'>Local Feed</h1>
+<div id="menu">
+  <a ng-href="/#/home">Home</a>
+  <a ng-href="/#/createItin">Create Itinerary</a>
+</div>
+<input type='button' class='profile-button' ng-click='openProfile()' ng-value='username' />
+<div class='profile-menu'>
+  <ul ng-class='menuStyle'>
+    <li class='profile-itineraries-button' ng-click='gotoMyItineraries()'>My Itineraries</li>
+    <li class='profile-favorites-button' ng-click='gotoFavorites()'>Favorites</li>
+    <li class='profile-friends-button' ng-click='gotoFriends()'>Friends</li>
+    <li class='profile-logout-button' ng-click='logout()'>Logout</li>
+  </ul>
+</div>
 
 <div id='feedIntro'>
 
@@ -13,7 +26,7 @@
     as a template, and use each item in the array it's populating from with a new template
     we are filtering which items will be populated, using filter: searchZip. It will only display the itins that have a matching zip.
      -->
-    <div class="feed-item" ng-repeat='itinerary in currentItins | filter: searchZip'>
+    <div class="feed-item" ng-repeat='itinerary in currentItins '>
 
       <!-- {{}} double curly brackets used to access variables on an angular partial. set variable to the scope on the controller for this partial -->
       <h1>{{itinerary.title}}</h1>

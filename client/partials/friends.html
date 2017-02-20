@@ -20,10 +20,14 @@
     <button type='button' ng-style='friendSuccess' ng-click='addFriendHandler()' class='friend-success'>{{friendMessage}}</span>
   </div>
   <ul class='friendsList'>
-    <li ng-repeat='friend in friends' ng-click='friendsItineraries(friend.username)'>
+    <li ng-repeat='friend in friends track by $index' ng-mouseenter='showFriendRoute($index)'>
       <img src='https://www.drupal.org/files/profile_default.png' class='profile-pic' alt=':)' />
       <strong>{{friend.username}}<strong> <br/><br/>
       <em>{{friend.zip}}</em> <br/>
+      <div class='friend-route' ng-mouseleave='hideFriendRoute($index)' ng-style='friendRoute[$index]' ng-click='friendRouteHandler()'>
+        <button type='button' ng-click='friendFavorites(friend.username)' class='friend-fav'>Favorites</button>
+        <button type='button' ng-click='friendItineraries(friend.username)' class='friend-itin'>Itineraries</button>
+      </div>
     </li>
   </ul>
 

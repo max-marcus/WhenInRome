@@ -23,5 +23,10 @@
     "ngmap": "^1.17.8",
     "nodemon": "^1.9.2",
     "request": "^2.79.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb-base": "^11.1.0",
+    "eslint-plugin-import": "^2.2.0"
   }
 }

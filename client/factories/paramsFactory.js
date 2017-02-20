@@ -2,8 +2,6 @@ angular
   .module('ParamsFactory', [])
   .factory('ParamsFactory', [paramsFactory]);
 
-  function paramsFactory(){
-    return {
-      params: {}
-    };
-  }
+function paramsFactory() {
+  return { params: {} };
+}
